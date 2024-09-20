@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Livros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background-color: #ffe4e1; /* Light pink */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 250px;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h2 {
+            color: #ff6f61; /* Coral */
+            font-size: 1.5em;
+        }
+        .card p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Relatório de Livros</h1>
+    <div class="container">
+        {% for livro in livros %}
+        <div class="card">
+            <h2>{{ livro.titulo }}</h2>
+            <p><strong>Autor:</strong> {{ livro.autor }}</p>
+            <p><strong>Ano de Publicação:</strong> {{ livro.ano_publicacao }}</p>
+            <p><strong>Preço:</strong> R$ {{ livro.preco }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
